@@ -1,21 +1,67 @@
 module.exports = {
-  title: '牧羊人',
+  title: 'Note',
   description: 'Just playing around',
   head: [
-    ['link', { rel: 'icon', href: `/gong.png` }]
+    ['link', { rel: 'icon', href: `/gong.ico` }]
+    // ['link', { rel: 'manifest', href: `/manifest.json` }]
   ],
   themeConfig: {
     nav:[
-      { text: 'javascript系列', link: '/algorithm/' }, // 内部链接 以docs为根目录
-      { text: '算法', link: '/algorithm/' }, // 外部链接
+      { text: 'JS专题', link: '/js/' },
       {
         text: 'ES6',
-        items: [
-          { text: 'GitHub地址', link: '/algorithm/' },
-          { text: '算法仓库', link: '/algorithm/'}
-        ]
+        link: '/es6/'
+        // items: [
+        //   { text: 'GitHub地址', link: '/about/' },
+        //   { text: '算法仓库', link: '/about/'}
+        // ]
       },
-      { text: 'GitHub', link: 'https://github.com/gzwgq222' } // 外部链接
-    ]
+      { text: 'webpack', link: '/webpacks/' },
+      { text: '算法', link: '/algorithm/' },
+      { text: 'GitHub', link: 'https://github.com/gzwgq222' },
+      { text: '关于', link: '/about/' }
+    ],
+    sidebar: {
+      '/js/': [
+        {
+          title: 'JS专题系列',
+          collapsable: false,
+          children: [
+            ['one', '闭包'],
+            ['two', '数组去重'],
+            ['two', '数组扁平化'],
+            ['two', 'reduce实现map | filter'],
+            ['two', '深 | 浅拷贝'],
+            ['two', '防抖 | 节流'],
+            ['two', '函数柯里化'],
+            ['two', '继承'],
+            ['two', 'event loop'],
+            ['two', '实现call | apply | bind']
+          ]
+        },
+      ],
+      '/algorithm/': [
+        {
+          title: '基础算法',
+          collapsable: false,
+          children: [
+            ['search', '二分法查找'],
+            ['sort', '排序算法']
+          ]
+        }
+      ],
+      '/es6/': [
+        'promise'
+      ],
+      '/webpacks/': [
+        {
+          title: 'webpack配置',
+          collapsable: false,
+          children: [
+            ['one', 'webpack的作用']
+          ]
+        }
+      ]
+    }
   }
 }
