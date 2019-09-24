@@ -30,6 +30,7 @@ module.exports = {
             ['one', '闭包'],
             ['two', '数组去重'],
             ['two', '数组扁平化'],
+            ['two', 'this'],
             ['two', 'reduce实现map | filter'],
             ['two', '深 | 浅拷贝'],
             ['two', '防抖 | 节流'],
@@ -42,11 +43,15 @@ module.exports = {
       ],
       '/algorithm/': [
         {
-          title: '基础算法',
           collapsable: false,
           children: [
-            ['search', '二分法查找'],
             ['sort', '排序算法']
+          ]
+        },
+        {
+          collapsable: false,
+          children: [
+            ['search', '查找算法'],
           ]
         }
       ],
