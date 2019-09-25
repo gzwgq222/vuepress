@@ -17,7 +17,7 @@ module.exports = {
         // ]
       },
       { text: 'webpack', link: '/webpacks/' },
-      { text: '数据结构与算法', link: '/algorithm/' },
+      { text: '算法', link: '/algorithm/' },
       { text: 'GitHub', link: 'https://github.com/gzwgq222' },
       { text: '关于', link: '/about/' }
     ],
@@ -43,14 +43,10 @@ module.exports = {
       ],
       '/algorithm/': [
         {
+          title: '数据结构与算法',
           collapsable: false,
           children: [
-            ['sort', '排序算法']
-          ]
-        },
-        {
-          collapsable: false,
-          children: [
+            ['sort', '排序算法'],
             ['search', '查找算法'],
           ]
         }
