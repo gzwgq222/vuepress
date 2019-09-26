@@ -5,9 +5,10 @@
  * @param {Number} m 默认为 n
  * @return {Array} 随意生成的数据
  */
-const getRandomArr = (n, m = n) => Array.from({length: n}, item => Math.floor(Math.random() * m))
+const getRandomArr = (n, m = n) => Array.from({length: n}, _ => Math.floor(Math.random() * m))
 let arr =  getRandomArr(100)
 let arr1 =  [...arr];
+let arr2 =  [...arr];
 
 function bubbleSort (arr) {
   for(let i = 0; i < arr.length - 1; i++) {
@@ -38,3 +39,23 @@ function selectionSort (arr) {
 console.time('selectionSort：')
 selectionSort(arr1)
 console.timeEnd('selectionSort：')
+
+function quickSort (arr) {
+  if (arr.length < 1) return arr;
+  const pivotIndex = Math.floor(arr.length / 2);
+  const pivot = arr.splice(pivotIndex, 1)[0];
+  let left = [],
+  right = [];
+  for (let i = 0; i < arr.length; i ++) {
+    arr[i] > pivot ? right.push(arr[i]) : left.push(arr[i]);
+  }
+  return quickSort(left).concat(pivot, quickSort(right));
+  // arr.forEach(item => {
+  //   item > pivot ? right.push(item) : left.push(item);
+  // })
+  // return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+console.time('quickSort：')
+quickSort(arr2);
+console.timeEnd('quickSort：')

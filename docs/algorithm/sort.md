@@ -46,8 +46,8 @@ function bubbleSort (arr) {
 ::: tip
 选择最小（大）数的从第一位依次往后排，直到全部排列完毕，共需 n-1 次循环排序，第 n-1 次循环的时候最后一个数已经是最大或最小值了。通过比较图可知，选择排序在时间复杂度上是最稳定的，无论什么数据进去时间复杂度都是 n-1 + n-2 + n-3 ... + 3 + 2 +1 = O(n²)
 :::
-
 ![selectionSort](https://upload-images.jianshu.io/upload_images/1867034-c6cc220cfb2b9ac8.gif?imageMogr2/auto-orient/strip)
+
 ```js
 function selectionSort (arr) {
   const { length: len } = arr;
@@ -64,6 +64,38 @@ function selectionSort (arr) {
 **Q：为什么不是 i < len ?**   
 **A：** 当循环了n-1次排序的时候就已经按正序排好了 n-1 个数，此时最后一个数就是最大或最小值了，无需再排一次。  
 **Q：为什么 j = i；j < len ?**    
-**A：** 与上同理，当在第 i 次排序的时候前面 i - 1 个数就已经是正序，前面的数无需再排了，只需把后面的数进行排序即可。因为要和后面的每一项进行比较找出值最小的 minIndex，所以 j < len。 
+**A：** 与上同理，当在第 i 次排序的时候前面 i - 1 个数就已经是正序了，前面的数无需再排了，只需把后面的数进行排序即可。因为要和后面的每一项进行比较找出值最小的 minIndex，所以 j < len。
+
 ### 快速排序（Quick Sort） 
+::: tip
+通过一趟排序，将数据分割成两部分，其中一部分的数据都比另一部分的小，对这两部分的数据再进行该分割的操作，以达到整个序列有序（将小数据放一侧，大数据放一侧，有点冒泡排序的味道）。
+一种分而治之思想在排序算法上的典型应用。本质上看，快排是在冒泡排序的基础上的递归分治法。顾名思义，他的特点就快，和其它排序方法相比，在处理大量数据的时候最为明显。
+:::
 ![Quick Sort](https://upload-images.jianshu.io/upload_images/1867034-cd65e35d7dce5045.gif?imageMogr2/auto-orient/strip)
+
+**两种实现方式**
+
+1. 使用两个数组进行存放
+```js
+function quickSort (arr) {
+  if (arr.length < 1) return arr;
+  const pivotIndex = Math.floor(arr.length / 2); // 找到基准数
+  const pivot = arr.splice(pivotIndex, 1)[0]; // 取出并删除基准数
+  let left = [],
+  right = [];
+  for (let i = 0; i < arr.length; i ++) {
+    arr[i] > pivot ? right.push(arr[i]) : left.push(arr[i]);
+  }
+  return quickSort(left).concat(pivot, quickSort(right));
+  // or
+  // arr.forEach(item => {
+  //   item > pivot ? right.push(item) : left.push(item);
+  // })
+  // return [...quickSort(left), pivot, ...quickSort(right)];
+}
+```
+2. 使用交换（正宗版本）
+
+[参考资料](https://www.cnblogs.com/liululin/p/5897059.html)
+
+[参考资料](https://www.cnblogs.com/alaner/p/9612948.html)
