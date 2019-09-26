@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Note',
-  description: 'Just playing around',
+  title: 'Notes',
+  description: '随 想 随 写',
   head: [
     ['link', { rel: 'icon', href: `/gong.ico` }]
     // ['link', { rel: 'manifest', href: `/manifest.json` }]
