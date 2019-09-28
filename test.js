@@ -6,7 +6,7 @@
  * @return {Array} 随意生成的数据
  */
 const getRandomArr = (n, m = n) => Array.from({length: n}, _ => Math.floor(Math.random() * m))
-let arr =  getRandomArr(100)
+let arr =  getRandomArr(10)
 let arr1 =  [...arr];
 let arr2 =  [...arr];
 
@@ -20,9 +20,9 @@ function bubbleSort (arr) {
   }
   return arr
 }
-console.time('bubbleSort：')
-bubbleSort(arr)
-console.timeEnd('bubbleSort：')
+// console.time('bubbleSort：')
+// bubbleSort(arr)
+// console.timeEnd('bubbleSort：')
 
 function selectionSort (arr) {
   const { length: len } = arr;
@@ -36,10 +36,11 @@ function selectionSort (arr) {
   }
 }
 
-console.time('selectionSort：')
-selectionSort(arr1)
-console.timeEnd('selectionSort：')
+// console.time('selectionSort：')
+// selectionSort(arr1)
+// console.timeEnd('selectionSort：')
 
+// 使用两个空数组进行交换
 function quickSort (arr) {
   if (arr.length < 1) return arr;
   const pivotIndex = Math.floor(arr.length / 2);
@@ -56,6 +57,33 @@ function quickSort (arr) {
   // return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-console.time('quickSort：')
-quickSort(arr2);
-console.timeEnd('quickSort：')
+// console.time('quickSort：')
+// quickSort(arr2);
+// console.timeEnd('quickSort：')
+
+// 使用交换（正宗版）
+function quickSort2(arr,low,high){
+  var key = arr[low];
+  var start = low;
+  var end = high;
+  while(end > start){
+      while(end > start && arr[end] >= key) end--;
+      if(arr[end] < key){
+          var temp = arr[end];
+          arr[end] = arr[start];
+          arr[start] = temp;
+      }
+      while(end > start && arr[start] <= key) start++;
+      if(arr[start] > key){
+          var temp = arr[start];
+          arr[start ]= arr[end];
+          arr[end] = temp;
+      }
+  }
+  if(start > low) quickSort2(arr,low,start-1);
+  if(end < high) quickSort2(arr,end+1,high);
+}
+console.time('quickSort2')
+quickSort2(arr, 0, arr.length - 1);
+console.timeEnd('quickSort2')
+console.log(arr)
