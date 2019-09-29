@@ -40,7 +40,7 @@ function selectionSort (arr) {
 // selectionSort(arr1)
 // console.timeEnd('selectionSort：')
 
-// 使用两个空数组进行交换
+// 使用两个空数组进行交换 也可以把和基准数相等的数值取出来，没必要进入递归
 function quickSort (arr) {
   if (arr.length < 1) return arr;
   const pivotIndex = Math.floor(arr.length / 2);
@@ -67,18 +67,12 @@ function quickSort2(arr,low,high){
   var start = low;
   var end = high;
   while(end > start){
-      while(end > start && arr[end] >= key) end--;
-      if(arr[end] < key){
-          var temp = arr[end];
-          arr[end] = arr[start];
-          arr[start] = temp;
-      }
-      while(end > start && arr[start] <= key) start++;
-      if(arr[start] > key){
-          var temp = arr[start];
-          arr[start ]= arr[end];
-          arr[end] = temp;
-      }
+    // 从后往前
+    while(end > start && arr[end] >= key) end--; // 遍历查找第一个小于 key 的下标
+    if(arr[end] < key) [arr[end], arr[start]] = [arr[start], arr[end]]
+    // 从前往后
+    while(end > start && arr[start] <= key) start++;
+    if(arr[start] > key) [arr[start], arr[end]] = [arr[end], arr[start]]
   }
   if(start > low) quickSort2(arr,low,start-1);
   if(end < high) quickSort2(arr,end+1,high);
