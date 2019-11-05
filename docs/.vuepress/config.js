@@ -1,25 +1,27 @@
 module.exports = {
   title: 'Notes',
-  description: '随 想 随 写',
+  description: 'stay hungry stay foolish',
   head: [
     ['link', { rel: 'icon', href: `/gong.ico` }]
     // ['link', { rel: 'manifest', href: `/manifest.json` }]
   ],
   themeConfig: {
     nav:[
+      { text: '源码', link: 'stay' },
       { text: 'JS专题', link: '/js/' },
       {
         text: 'ES6',
         link: '/es6/'
-        // items: [
-        //   { text: 'GitHub地址', link: '/about/' },
-        //   { text: '算法仓库', link: '/about/'}
-        // ]
       },
-      { text: 'webpack', link: '/webpacks/' },
       { text: '算法', link: '/algorithm/' },
-      { text: 'GitHub', link: 'https://github.com/gzwgq222' },
-      { text: '关于', link: '/about/' }
+      {
+        text: '工具',
+        items: [
+          { text: 'git', link: '/git/' },
+          { text: 'webpack', link: '/webpk/'}
+        ]
+      },
+      { text: 'GitHub', link: 'https://github.com/gzwgq222' }
     ],
     sidebar: {
       '/js/': [
@@ -53,15 +55,6 @@ module.exports = {
       ],
       '/es6/': [
         'promise'
-      ],
-      '/webpacks/': [
-        {
-          title: 'webpack配置',
-          collapsable: false,
-          children: [
-            ['one', 'webpack的作用']
-          ]
-        }
       ]
     }
   }
