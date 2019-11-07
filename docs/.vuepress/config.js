@@ -16,33 +16,42 @@ module.exports = {
       },
       { text: '算法', link: '/algorithm/' },
       {
-        text: '工具',
+        text: '更多',
         items: [
           { text: 'Git', link: '/git/' },
           { text: 'Webpack', link: '/webpk/'},
-          { text: 'Gginx', link: '/webpk/'},
+          { text: 'Nginx', link: '/webpk/'},
           { text: 'Linux', link: '/webpk/'}
         ]
       },
       { text: 'GitHub', link: 'https://github.com/gzwgq222' }
     ],
+    sidebarDepth: 2,
     sidebar: {
+      '/webpk/': [
+        {
+          title: 'webpack',
+          collapsable: false,
+          children: ['/webpk/']
+        }
+      ],
       '/js/': [
         {
           title: 'JS专题系列',
           collapsable: false,
           children: [
-            ['one', '闭包'],
-            ['two', '数组去重'],
-            ['two', '数组扁平化'],
-            ['two', 'this'],
-            ['two', 'reduce实现map | filter'],
-            ['two', '深 | 浅拷贝'],
-            ['two', '防抖 | 节流'],
-            ['two', '函数柯里化'],
-            ['two', '继承'],
-            ['two', 'event loop'],
-            ['two', '实现call | apply | bind']
+            '/js/'
+            // ['one', '闭包'],
+            // ['two', '数组去重'],
+            // ['two', '数组扁平化'],
+            // ['two', 'this'],
+            // ['two', 'reduce实现map | filter'],
+            // ['two', '深 | 浅拷贝'],
+            // ['two', '防抖 | 节流'],
+            // ['two', '函数柯里化'],
+            // ['two', '继承'],
+            // ['two', 'event loop'],
+            // ['two', '实现call | apply | bind']
           ]
         },
       ],
@@ -50,9 +59,9 @@ module.exports = {
         {
           title: '数据结构与算法',
           collapsable: false,
-          children: [
-            ['sort', '排序算法'],
-            ['search', '查找算法'],
+          children: ['/algorithm/'
+            // ['sort', '排序算法'],
+            // ['search', '查找算法'],
           ]
         }
       ],
