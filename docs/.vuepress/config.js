@@ -1,6 +1,7 @@
 module.exports = {
+  base: '/vuepress/',
   title: 'Notes',
-  description: 'stay hungry stay foolish',
+  description: 'Stay hungry Stay foolish',
   head: [
     ['link', { rel: 'icon', href: `/gong.ico` }]
     // ['link', { rel: 'manifest', href: `/manifest.json` }]
