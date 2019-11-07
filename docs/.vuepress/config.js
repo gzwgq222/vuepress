@@ -18,8 +18,10 @@ module.exports = {
       {
         text: '工具',
         items: [
-          { text: 'git', link: '/git/' },
-          { text: 'webpack', link: '/webpk/'}
+          { text: 'Git', link: '/git/' },
+          { text: 'Webpack', link: '/webpk/'},
+          { text: 'Gginx', link: '/webpk/'},
+          { text: 'Linux', link: '/webpk/'}
         ]
       },
       { text: 'GitHub', link: 'https://github.com/gzwgq222' }
