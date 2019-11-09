@@ -8,22 +8,29 @@ module.exports = {
   ],
   themeConfig: {
     nav:[
-      { text: '源码', link: 'stay' },
-      { text: 'JS专题', link: '/js/' },
+      { text: '手写系列', link:'hand' },
+      { text: '源码学习', link: 'stay' },
+      { text: 'js专题', link: '/js/' },
       {
-        text: 'ES6',
+        text: 'es6',
         link: '/es6/'
       },
       { text: '算法', link: '/algorithm/' },
-      {
-        text: '更多',
-        items: [
-          { text: 'Git', link: '/git/' },
-          { text: 'Webpack', link: '/webpk/'},
-          { text: 'Nginx', link: '/webpk/'},
-          { text: 'Linux', link: '/webpk/'}
-        ]
-      },
+      { text: '设计模式', link: '/algorithm/' },
+      { text: '持续集成', link: '/jenkins/' },
+      { text: 'git', link: '/git/' },
+      { text: 'webpack', link: '/webpk/'},
+      { text: 'nginx', link: '/nginx/'},
+      { text: 'linux', link: '/linux/'},
+      // {
+      //   text: '更多',
+      //   items: [
+      //     { text: 'Git', link: '/git/' },
+      //     { text: 'Webpack', link: '/webpk/'},
+      //     { text: 'Nginx', link: '/webpk/'},
+      //     { text: 'Linux', link: '/webpk/'}
+      //   ]
+      // },
       { text: 'GitHub', link: 'https://github.com/gzwgq222' }
     ],
     sidebarDepth: 2,
@@ -63,6 +70,13 @@ module.exports = {
             // ['sort', '排序算法'],
             // ['search', '查找算法'],
           ]
+        }
+      ],
+      '/jenkins/': [
+        {
+          title: '持续集成',
+          collapsable: false,
+          children: ['/jenkins/']
         }
       ],
       '/es6/': [
