@@ -1,8 +1,7 @@
-## Git
-
-::: tip
-集中式 vs 分布式
-:::
+# Git
+## 常用命令
+###  初始化
+> 集中式 vs 分布式
 
   | 集中式（SVN）|分布式（git）
 --|:--:|--:
@@ -21,10 +20,14 @@
 
 ![分布式](https://images2017.cnblogs.com/blog/781464/201710/781464-20171017113825209-95721098.jpg) -->
 
-::: tip
-常用操作命令
-:::
-
+* 初始化 Git 仓库
+    ```
+    git init
+    ```
+* clone 
+    ```
+    git clone https://github.com/gzwgq222/blog-server.git
+    ```
 * 设置用户信息
     ``` 
     git config --global user.name 'gzwgq222'
@@ -39,16 +42,8 @@
     ```
     git config --list
     ```
-* 初始化 Git 仓库
-    ```
-    git init
-    ```
-* clone 
-    ```
-    git clone https://github.com/gzwgq222/blog-server.git
-    ```
-* 暂存文件  
-    暂存所有，不包含删除
+### 暂存
+* 暂存所有，不包含删除
     ```
     git add .
     ```
@@ -65,6 +60,14 @@
     ```
     git commit -m 'commit message'
     ```
+* 取消暂存
+    ```
+    git reset HEAD <file>
+    ```
+* 撤销对文件的修改
+    ```
+    git checkout -- <file>
+    ```
 * 查看提交历史
     ```
     git log
@@ -74,14 +77,7 @@
     git log --oneline --decorate --graph --all
     ```
     输出你的提交历史、各个分支的指向以及项目的分支分叉情况
-* 取消暂存
-    ```
-    git reset HEAD <file>
-    ```
-* 撤销对文件的修改
-    ```
-    git checkout -- <file>
-    ```
+### 远程仓库
 * 查看远程仓库
     ```
     git remote
@@ -99,6 +95,7 @@
     ```
     git push [remote-name] [branch-name]
     ```
+### tag
 * 列出标签
     ```
     git tag
@@ -111,6 +108,7 @@
     ```
     git show v1.0
     ```
+### 分支
 * 查看分支
     ```
     git branch
@@ -145,6 +143,7 @@
     ```
     `git fetch` 只是把远程仓库的数据拉取下来，并不会进行合并，`get pull`，相当于先 `git fetch` 然后 `git merge`
     为了确保 git 提交记录干净，拉取的时候最好使用 `git pull --rebase` 或者 `git pull` 完成后再 `git --rebase`
+### 变基
 * 变基
     ```
     git pull --rebase

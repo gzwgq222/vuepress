@@ -1,7 +1,8 @@
-### 排序算法（冒泡、选择、快排）
----
+# 基础算法
+
+## 排序
 对比图   
-![sort](https://upload-images.jianshu.io/upload_images/6078022-86a57fe9166e171b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)   
+![sort](../.vuepress/public/algorithm/sort.png)   
 **n**: 数据规模   
 **k**:“桶”的个数    
 **In-place**: 占用常数内存，不占用额外内存    
@@ -16,7 +17,7 @@
 ::: tip
 顾名思义，冒泡排序就像气泡一样，依次向上（后），每次都是从第一个数开始和后一个数进行比较，如果大于后一个数，则交换两者位置，后一个数再和下一位进行比较，直到全部排序完毕。大的数往后排得到的就是顺序，小的数往后排得到的则是倒序。  
 :::
-![Bubble Sort](https://upload-images.jianshu.io/upload_images/6078022-4987842fd0c41f9b.gif?imageMogr2/auto-orient/strip)
+![Bubble Sort](../.vuepress/public/algorithm/bubble.gif)
 
 **什么时候最慢 ？**   
 当输入的数据是反序时，每两个数之间都需要交换位置，此时操作次数无疑是最多的，所以是最慢的。
@@ -61,7 +62,7 @@ function bubbleSort(arr) {
 ::: tip
 选择最小（大）数的从第一位依次往后排，直到全部排列完毕，共需 n-1 次循环排序，第 n-1 次循环的时候最后一个数已经是最大或最小值了。通过比较图可知，选择排序在时间复杂度上是最稳定的，无论什么数据进去时间复杂度都是 n-1 + n-2 + n-3 ... + 3 + 2 +1 = O(n²)
 :::
-![selectionSort](https://upload-images.jianshu.io/upload_images/1867034-c6cc220cfb2b9ac8.gif?imageMogr2/auto-orient/strip)
+![selectionSort](../.vuepress/public/algorithm/select.gif)
 
 ```js
 function selectionSort (arr) {
@@ -86,7 +87,7 @@ function selectionSort (arr) {
 通过一趟排序，将数据分割成两部分，其中一部分的数据都比另一部分的小，对这两部分的数据再进行该分割的操作，以达到整个序列有序（将小数据放一侧，大数据放一侧，有点冒泡排序的味道）。
 一种分而治之思想在排序算法上的典型应用。本质上看，快排是在冒泡排序的基础上的递归分治法。顾名思义，他的特点就快，和其它排序方法相比，在处理大量数据的时候最为明显。
 :::
-![Quick Sort](https://upload-images.jianshu.io/upload_images/1867034-cd65e35d7dce5045.gif?imageMogr2/auto-orient/strip)
+![Quick Sort](../.vuepress/public/algorithm/quick.gif)
 
 **两种实现方式**
 
@@ -99,7 +100,8 @@ function quickSort (arr) {
   let left = [],
   right = [];
   for (let i = 0; i < arr.length; i ++) {
-    arr[i] > pivot ? right.push(arr[i]) : left.push(arr[i]); // 优化：和基准数相等的数据不必进行递归，可以把相等的数据添加到一个数组 pivotList 中 => .concat(pivotList, ...)
+    // 优化：和基准数相等的数据不必进行递归，可以把相等的数据添加到一个数组 pivotList 中 => .concat(pivotList, ...)
+    arr[i] > pivot ? right.push(arr[i]) : left.push(arr[i]);
   }
   return quickSort(left).concat(pivot, quickSort(right));
   // or
@@ -122,6 +124,8 @@ function quickSort (arr) {
 
 **2. 使用交换（正宗版本）**
 
+## 递归
+## 查找
 [参考资料](https://www.cnblogs.com/liululin/p/5897059.html)
 
 [参考资料](https://www.cnblogs.com/alaner/p/9612948.html)
