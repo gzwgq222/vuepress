@@ -12,5 +12,7 @@
 ### call
 ### apply
 ### setTimeout
+### 深、浅拷贝
+### 防抖、节流
 
 ## promise
