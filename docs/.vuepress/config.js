@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/vuepress/',
+  base: '/doc/',
   title: 'Notes',
   description: 'Stay hungry Stay foolish',
   markdown: {
@@ -17,7 +17,7 @@ module.exports = {
       { text: 'js专题', link: '/js/' },
       { text: '算法', link: '/algorithm/' },
       { text: '设计模式', link: '/design/' },
-      { text: '持续集成', link: '/jenkins/' },
+      { text: 'CI/CD', link: '/jenkins/' },
       { text: 'git', link: '/git/' },
       { text: 'webpack', link: '/webpk/'},
       { text: 'nginx', link: '/nginx/'},
