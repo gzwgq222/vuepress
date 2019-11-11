@@ -1,4 +1,5 @@
-# 手动实现api
+# 手写系列
+
 ## 数组
 ### foreach
 ### map
@@ -12,7 +13,8 @@
 ### call
 ### apply
 ### setTimeout
-### 深、浅拷贝
-### 防抖、节流
 
-## promise
+
+## 异步
+### promise
+### async/await

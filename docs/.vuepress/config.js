@@ -1,27 +1,28 @@
+const moment = require('moment');
+
 module.exports = {
   base: '/doc/',
-  title: 'Notes',
+  title: 'Doc',
   description: 'Stay hungry Stay foolish',
   markdown: {
     lineNumbers: true
   },
   head: [
     ['link', { rel: 'icon', href: `/gong.ico` }]
-    // ['link', { rel: 'manifest', href: `/manifest.json` }]
   ],
   themeConfig: {
-    lastUpdated: 'Last Updated', // string | boolean
+    lastUpdated: '上次更新',
     nav:[
-      { text: '手写系列', link:'/handle/' },
-      { text: '源码学习', link: 'stay' },
-      { text: 'js专题', link: '/js/' },
+      { text: '手写', link:'/handle/' },
+      { text: '源码', link: 'stay' },
+      { text: 'JS', link: '/js/' },
       { text: '算法', link: '/algorithm/' },
       { text: '设计模式', link: '/design/' },
       { text: 'CI/CD', link: '/jenkins/' },
-      { text: 'git', link: '/git/' },
-      { text: 'webpack', link: '/webpk/'},
-      { text: 'nginx', link: '/nginx/'},
-      { text: 'linux', link: '/linux/'},
+      { text: 'Git', link: '/git/' },
+      { text: 'Webpack', link: '/webpk/'},
+      { text: 'Nginx', link: '/nginx/'},
+      { text: 'Linux', link: '/linux/'},
       // {
       //   text: '更多',
       //   items: [
@@ -31,6 +32,7 @@ module.exports = {
       //     { text: 'Linux', link: '/webpk/'}
       //   ]
       // },
+      { text: 'Question', link: '/question/' },
       { text: 'GitHub', link: 'https://github.com/gzwgq222' }
     ],
     sidebarDepth: 2,
@@ -84,5 +86,17 @@ module.exports = {
     //     'promise'
     //   ]
     // }
-  }
+  },
+  plugins: [
+    [
+      '@vuepress/last-updated',
+      {
+        transformer: (timestamp, lang) => {
+          const moment = require('moment')
+          moment.locale(lang)
+          return moment(timestamp).format('YYYY-MM-DD HH:mm')
+        }
+      }
+    ]
+  ]
 }
