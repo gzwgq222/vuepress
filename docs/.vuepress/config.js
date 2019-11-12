@@ -2,7 +2,7 @@ const moment = require('moment');
 
 module.exports = {
   base: '/doc/',
-  title: 'Docs',
+  title: '欢乐时光',
   description: 'Stay hungry Stay foolish',
   markdown: {
     lineNumbers: true
