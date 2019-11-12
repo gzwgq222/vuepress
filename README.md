@@ -18,4 +18,15 @@ npm run dev
 npm run build
 ```
 
-该项目已通过 jenkins 实现了 CI/CD，每次 push 都会进行打包并自动更新到服务器。
+该项目已通过 jenkins 实现了 CI/CD，每次 push 都会自动进行打包并更新到服务器。   
+shell 脚本
+```
+#!/usr/bin/env sh
+npm install vuepress &&
+npm install moment &&
+# npm install
+npm run docs:build &&
+rm -rf /web/doc/* &&
+cd docs/.vuepress/dist &&
+cp -r * /web/doc
+```

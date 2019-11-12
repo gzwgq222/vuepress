@@ -1,7 +1,7 @@
 ---
 home: true
 # heroImage: /gong.jpg
-actionText: Link
+actionText: Links
 actionLink: /links/
 features:
 - title: 简洁至上
