@@ -9,7 +9,9 @@
 /build
 
 # misc
-test.js
+
+example.js
+demo.js
 
 .env.local
 .env.development.local
