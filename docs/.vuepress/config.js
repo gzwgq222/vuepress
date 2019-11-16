@@ -17,6 +17,7 @@ module.exports = {
       { text: '源码学习', link: '/sourceCode/' },
       { text: 'JS归纳', link: '/js/' },
       { text: 'CI/CD', link: '/jenkins/' },
+      { text: 'Node', link: '/node/' },
       {
         text: 'More',
         items: [
