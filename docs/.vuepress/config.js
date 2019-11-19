@@ -13,11 +13,11 @@ module.exports = {
   themeConfig: {
     lastUpdated: '上次更新',
     nav:[
+      { text: 'Node', link: '/node/' },
       { text: '手写系列', link:'/handle/' },
       { text: '源码学习', link: '/sourceCode/' },
       { text: 'JS归纳', link: '/js/' },
-      { text: 'CI/CD', link: '/jenkins/' },
-      { text: 'Node', link: '/node/' },
+      { text: 'CI/CD', link: '/CI_CD/' },
       {
         text: 'More',
         items: [
@@ -33,7 +33,26 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/gzwgq222' }
     ],
     sidebarDepth: 2,
-    sidebar: 'auto'
+    // sidebar: 'auto',
+    sidebar: {
+
+      '/CI_CD/': [
+        '',
+        'jenkins',
+        'gitlab',
+        'travis'
+      ],
+
+      '/node/': [
+        '',
+        'fs',
+        'buffer',
+        'stream',
+        'net',
+        'event',
+        'apply'
+      ]
+    }
   },
   plugins: [
     ['@vuepress/back-to-top'],
