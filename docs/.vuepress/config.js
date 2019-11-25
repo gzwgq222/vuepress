@@ -5,7 +5,7 @@ module.exports = {
   title: '欢乐时光',
   description: 'Stay hungry Stay foolish',
   markdown: {
-    lineNumbers: true
+    // lineNumbers: true
   },
   head: [
     ['link', { rel: 'icon', href: `/gong.ico` }]
@@ -51,6 +51,13 @@ module.exports = {
         'net',
         'event',
         'apply'
+      ],
+
+      '/handle/': [
+        '',
+        'array',
+        'fn',
+        'async'
       ]
     }
   },
