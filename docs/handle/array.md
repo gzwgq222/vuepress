@@ -49,11 +49,60 @@ Array.prototype.filter = function (cb, context) {
 
 ```
 ### reduce
+`reduce` 方法对数组的每个元素执行提供的 `callback` ，将执行的结果作为返回值返回     
+语法: `const data = arr.reduce(cb(accumulator, currentValue, index, arr), initialValue)`
+``` js
+Array.prototype.reduce = function (cb, initValue) {
+    const arr = Array.prototype.slice.call(this);
+    var i = 0;
+    if (initValue === undefined) {
+        initValue = arr[0];
+        i = 1;
+    }
+    var res = initValue;
+    for(; i < arr.length; i++) {
+        res = cb(res, arr[i], i, arr);
+    }
+    return res;
+}
+```
 
 ## 检索类
 对数组元素进行特定值的检索
-### findIndex
+
 ### find
+`find` 方法对数组元素的每一项 `callback` ，直至有一个 `callback` 为 `true`。当找到这样一个元素后，停止检索，立即返回该元素，否则返回 `undefined`    
+语法: `const index = arr.find((item, i, arr), context)`
+``` js
+Array.prototype.find1 = function (cb, context) {
+    const arr = Array.prototype.slice.call(this);
+    let item = undefined;
+    for(var i = 0; i < arr.length; i++) {
+        if (cb.call(context, arr[i], i, arr)) {
+            item = arr[i];
+            break;
+        };
+    }
+    return item;
+}
+```
+
+### findIndex
+`findIndex` 方法对数组元素的每一项 `callback` ，直至有一个 `callback` 为 `true`。找到这样一个元素后，停止检索，立即返回该元素的索引，否则返回 -1     
+语法: `const index = arr.findIndex((item, i, arr), context)`
+``` js
+Array.prototype.findIndex = function (cb, context) {
+    const arr = Array.prototype.slice.call(this);
+    let index = -1;
+    for(var i = 0; i < arr.length; i++) {
+        if (cb.call(context, arr[i], i, arr)) {
+            index = i;
+            break;
+        };
+    }
+    return index;
+}
+```
 ### indexOf
 ### lastIndexOf
 ### some

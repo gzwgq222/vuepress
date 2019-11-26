@@ -3,7 +3,7 @@ const moment = require('moment');
 module.exports = {
   base: '/doc/',
   title: '欢乐时光',
-  description: 'Stay hungry Stay foolish',
+  description: 'full stack developer',
   markdown: {
     // lineNumbers: true
   },
@@ -54,10 +54,23 @@ module.exports = {
       ],
 
       '/handle/': [
-        '',
         'array',
         'fn',
         'async'
+      ],
+
+      '/algorithm/': [
+        'sort',
+        'recursive',
+        'search'
+      ],
+
+      '/js/': [
+        ''
+      ],
+
+      '/git/': [
+        ''
       ]
     }
   },

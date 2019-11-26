@@ -1,3 +1,2 @@
-# Codeing
 
-手动实现一些常用的api，诸如数组、函数、promise等
+闲暇无聊之际，手动实现诸如数组、函数、promise等常用 api
