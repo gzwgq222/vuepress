@@ -13,6 +13,7 @@ module.exports = {
   themeConfig: {
     lastUpdated: '上次更新',
     nav:[
+      { text: '爬虫', link: '/ppt/' },
       { text: 'Node', link: '/node/' },
       { text: '手写系列', link:'/handle/' },
       { text: '源码学习', link: '/sourceCode/' },
@@ -36,6 +37,10 @@ module.exports = {
     // sidebar: 'auto',
     sidebar: {
 
+      '/ppt/': [
+        ''
+      ],
+      
       '/CI_CD/': [
         '',
         'jenkins',
