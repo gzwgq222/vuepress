@@ -38,7 +38,8 @@ module.exports = {
     sidebar: {
 
       '/ppt/': [
-        ''
+        '',
+        'ppt'
       ],
       
       '/CI_CD/': [
