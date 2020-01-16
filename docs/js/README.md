@@ -14,7 +14,6 @@
 
 ### 去重
 
-**多重不同的姿势去重**
 
 - 双重循环
 ``` js
@@ -96,11 +95,54 @@ const unique = arr => {
     }, [])
 }
 ```
-
+**利用 object(key)、set(value) 的唯一性**
 - set
 ``` js
 const unique = arr => [...new Set(arr)]
-```
-``` js
 const unique = arr => Array.from(new Set(arr))
+```
+- object
+``` js
+const unique = arr => {
+    let object = {}
+    data.forEach(el => object[el] = '');
+    return Object.keys(object);
+}
+```
+
+
+### 数组转为树结构
+
+- 改变原数据
+``` js
+const toTree = data => {
+    data.forEach(item => {
+        const index = data.findIndex(el => el.id === item.pid);
+        if (index !== -1) {
+            let parent = data[index];
+            (parent.children || (parent.children = [])) && parent.children.push(item);
+        }
+    });
+    const parent = data.filter(item => !item.pid);
+    return parent;
+}
+```
+
+- 不改变原数据
+``` js
+const toTree = data => {
+    if (!Array.isArray(data)) return;
+    let map = {},
+        res = [];
+    data.forEach(el => map[el.id] = el);
+    data.forEach(el => {
+        let parent = map[el.pid]; // 当前元素的父元素
+        if (parent) {
+            (parent.children || (parent.children = [])) && parent.children.push(el);
+        } else {
+            res.push(el);
+        }
+    })
+    return res;
+}
 ```
