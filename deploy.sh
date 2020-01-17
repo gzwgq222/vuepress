@@ -3,14 +3,14 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-echo "信息：$1"
+echo "提交的信息：$1"
+
 # 添加到仓库
 git add .
 git commit -m "$1"
 git pull --rebase
 git push
 
-echo $1
 
 # 生成静态文件
 # npm run docs:build
@@ -24,7 +24,7 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
-git commit -m $1
+git commit -m "$1"
 
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
