@@ -3,9 +3,10 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+echo "信息：$1"
 # 添加到仓库
 git add .
-git commit -m $1
+git commit -m "$1"
 git pull --rebase
 git push
 
