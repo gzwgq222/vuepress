@@ -15,6 +15,7 @@
 ### 去重
 
 
+**循环**    
 - 双重循环
 ``` js
 const unique = arr => {
@@ -56,6 +57,7 @@ const unique = arr => {
 }
 ```
 
+**先排序处理**
 - sort 
 
 ::: tip
