@@ -31,4 +31,4 @@ git commit -m "$1"
 git pull --rebase
 git push
 
-echo -e "\033[32m 构建、部署完成！ \033[0m"
+echo -e "\033[32m 部署完成！ \033[0m"
