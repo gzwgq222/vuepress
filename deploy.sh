@@ -8,19 +8,19 @@ set -e
 yarn docs:build
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+# cd docs/.vuepress/dist
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 
-git init
-git add -A
+# git init
+git add .
 git commit -m 'deploy'
+git pull --rebase
 
-# 如果发布到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# 推送到 branch-deploy 分支
+# git push -f git@github.com:gzwgq222/vuepress.git master:branch-deploy
 
-# 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:gzwgq222/vuepress.git master:gh-pages
+git push
 
 cd -
