@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+# 执行 shell 脚本 sh deploy ****
 # 确保脚本抛出遇到的错误
 set -e
 

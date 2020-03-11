@@ -122,4 +122,13 @@
   ### 6、断开链接
   当数据传输完毕后需要断开 TCP 链接，此时发起 TCP 四次挥手
 
-  ![四次挥手](../.vuepress/public/web/leave.jpg)
+  ![四次挥手](../.vuepress/public/web/close.png)
+
+  - 发起方 向 被动方发送报文，Fin、Ack、Seq，表示已经没有数据传输了。并进入 FIN_WAIT_1 状态（嗨，我要走了）
+  - 被动方发送报文，Ack、Seq，表示同意关闭请求，此时发起方主机进入 FIN_WAIT_2 状态（好的，准了）
+  - 被动发 向 发起发发送报文、Fin、Seq、Ack，请求关闭连接，并进入 LAST_ACK 状态（我也要走啦！）
+  - 发送方 向 被动方发送报文，Ack、Seq，并进入 TIME_WAIT 状态。被动发收到发送方的报文后，关闭连接。发起方等待一段时间未收到回复，则正常关闭。（好的，我也批准了……怎么一直没回音？好吧，那我真的走了。）
+
+  参考文档：    
+  [从输入页面地址到展示页面信息都发生了些什么？](https://github.com/kaola-fed/blog/issues/271)    
+  [从URL输入到页面展现到底发生什么？](https://juejin.im/post/5c7646f26fb9a049fd108380#comment)    
