@@ -16,19 +16,20 @@ module.exports = {
       { text: '爬虫', link: '/ppt/' },
       { text: 'Node', link: '/node/' },
       { text: '手写系列', link:'/handle/' },
-      { text: '源码学习', link: '/sourceCode/' },
+      // { text: '源码学习', link: '/sourceCode/' },
       { text: 'JS归纳', link: '/js/' },
       { text: 'CI/CD', link: '/CI_CD/' },
       {
         text: 'More',
         items: [
           { text: '算法', link: '/algorithm/' },
-          { text: '设计模式', link: '/design/'},
+          // { text: '设计模式', link: '/design/'},
           { text: 'Git', link: '/git/' },
-          { text: 'Webpack', link: '/webpk/'},
-          { text: 'Nginx', link: '/nginx/'},
-          { text: 'Linux', link: '/linux/'},
-          { text: 'Question', link: '/question/' }
+          { text: 'Other', link: '/other/' },
+          // { text: 'Webpack', link: '/webpk/'},
+          // { text: 'Nginx', link: '/nginx/'},
+          // { text: 'Linux', link: '/linux/'},
+          // { text: 'Question', link: '/question/' }
         ]
       },
       { text: 'GitHub', link: 'https://github.com/gzwgq222' }
@@ -73,6 +74,9 @@ module.exports = {
 
       '/js/': [
         ''
+      ],
+      '/other/': [
+        'web'
       ],
 
       '/git/': [
