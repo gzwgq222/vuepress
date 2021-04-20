@@ -19,7 +19,7 @@ module.exports = {
       // { text: '源码学习', link: '/sourceCode/' },
       // { text: 'JS归纳', link: '/js/' },
       { text: '构建平台', link: '/aeon/' },
-      { text: 'CI/CD', link: '/CI_CD/' },
+      // { text: 'CI/CD', link: '/CI_CD/' },
       // {
       //   text: 'More',
       //   items: [
